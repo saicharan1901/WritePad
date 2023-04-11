@@ -9,11 +9,7 @@ const options = {
     }),
   ],
   secret: process.env.SECRET,
-  callbacks: {
-    signIn: async (user, account, profile) => {
-        return Promise.resolve("/");
-    },
-  },
+
 }
 
 export default (req, res) => NextAuth(req, res, options)
