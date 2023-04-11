@@ -9,6 +9,11 @@ const options = {
     }),
   ],
   secret: process.env.SECRET,
+  callbacks: {
+    async redirect(url, baseUrl) {
+      return baseUrl
+    },
+  },
 }
 
 export default (req, res) => NextAuth(req, res, options)
