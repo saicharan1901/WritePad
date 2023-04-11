@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Header from '../components/header';
 
 const NoteAdder = () => {
     const [title, setTitle] = useState('');
@@ -26,8 +27,9 @@ const NoteAdder = () => {
 
     return (
         <div className="bg-[#202124] text-white min-h-screen font-mono ">
-            <div className="container mx-auto py-8 max-w-2xl">
-                <div className="bg-[#202124] rounded-lg shadow-lg px-8 py-6 mb-8 border-gray-400 border">
+            <Header />
+            <div className="container mx-auto py-2 max-w-7xl">
+                <div className="bg-[#202124] rounded-lg shadow-lg px-8 py-6 mb-8 border-gray-400 border ml-72 max-w-2xl hover:border-yellow-700">
                     <div className="">
                         <input
                             type="text"
@@ -53,7 +55,7 @@ const NoteAdder = () => {
 
                     </div>
                     <button
-                        className="flex items-center justify-center px-4 py-2 mt-4 text-white bg-[#202124] rounded-full hover:blbg-ue-600 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110"
+                        className="flex items-center justify-center px-4 py-2 mt-4 text-white bg-[#202124] rounded-full hover:bg-yellow-700 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110"
                         onClick={handleSave}
                     >
                         <svg className="w-6 h-6 mr-2" viewBox="0 0 20 20" fill="currentColor">
@@ -65,11 +67,11 @@ const NoteAdder = () => {
 
                 <div className="flex flex-wrap justify-center ">
                     {notes.map((note, index) => (
-                        <div key={index} className="bg-[#202124] rounded-lg shadow-lg px-8 py-6 mb-8 mr-8 max-w-md group relative break-words border-gray-400 border" >
+                        <div key={index} className="bg-[#202124] rounded-lg shadow-lg px-8 py-6 mb-8 mr-8 max-w-md group relative break-words hover:border-yellow-700 border" >
                             <h3 className="font-mono text-white">{note.title}</h3>
                             <p className="text-white">{note.content}</p>
                             <button
-                                className="absolute top-0 right-0 p-1 text-white hover:text-red-600 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100"
+                                className="absolute top-0 right-0 p-1 text-white hover:text-yellow-600 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100"
                                 onClick={() => handleDelete(index)}
                             >
                                 <svg
