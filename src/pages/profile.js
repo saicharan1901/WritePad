@@ -5,6 +5,11 @@ import { useSession, signIn, signOut } from 'next-auth/react'
 export default function HomePage() {
     const { data: session, status } = useSession()
 
+    const handleSignin = (e) => {
+        e.preventDefault()
+        signIn()
+    }
+    
     if (status === 'loading') {
         return <p>Loading...</p>
     }
