@@ -9,12 +9,12 @@ import HomePage from './home'
 
 export default function Home() {
   return (
-    <>
+    <div className='font-mono'>
         <Head>
           <title>WritePad</title>
-          
+
         </Head>
         <HomePage />
-    </>
+    </div>
   )
 }

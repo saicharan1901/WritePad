@@ -7,11 +7,11 @@ export default function HomePage() {
 
             <Header />
 
-            <div className="flex flex-col items-center justify-center mt-12">
+            <div className="flex flex-col items-center justify-center">
                 <h1 className="text-2xl sm:text-4xl font-bold text-center text-yellow-500 mb-8 ">
                     <div className="w-8 h-8 sm:w-12 sm:h-12 absolute animate-bounce ">
                     </div>
-                    <div className="ml-2 sm:ml-24">Simplify your life with WritePad!</div>
+                    <div className="ml-2 sm:ml-24 sm:mt-24">Simplify your life with WritePad!</div>
                 </h1>
                 <div className="w-2/3 sm:w-1/2">
                     <p className="text-base sm:text-lg text-yellow-700 mb-4 mt-10 hover:text-yellow-600">

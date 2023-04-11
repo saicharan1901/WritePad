@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
 import Header from '../components/header';
 
+import { useSession, signIn, signOut } from 'next-auth/react'
+
+
 const NoteAdder = () => {
+    
+    const { data: session, status } = useSession()
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
     const [notes, setNotes] = useState([]);
@@ -24,6 +29,26 @@ const NoteAdder = () => {
     const handleDelete = (index) => {
         setNotes(notes.filter((_, i) => i !== index));
     };
+
+    if (status === 'loading') {
+        return <p>Loading...</p>
+    }
+    const handleSignin = (e) => {
+        e.preventDefault()
+        signIn()
+    }
+
+
+    if (!session) {
+        return (
+            <div className="min-h-screen flex items-center justify-center bg-[#202124] font-mono">
+
+                <p className='text-xl text-white animate-bounce'>You need to sign in</p> 
+                <button className="text-yellow-700 ml-5 animate-bounce bg-[#202124] font-mono px-4 py-2 rounded-md hover:bg-yellow-700 hover:text-white" onClick={handleSignin}>Sign in</button>
+            </div>
+        )
+    }
+    
 
     return (
         <div className="bg-[#202124] text-white min-h-screen font-mono ">
