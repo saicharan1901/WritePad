@@ -1,20 +1,20 @@
 import React from "react";
 import Link from "next/link";
-import { useSession, signIn, signOut } from 'next-auth/react'
+// import { useSession, signIn, signOut } from 'next-auth/react'
 
 
 export default function Header() {
-    const { data: session } = useSession()
+    // const { data: session } = useSession()
 
-    const handleSignin = (e) => {
-      e.preventDefault()
-      signIn()
-    }
+    // const handleSignin = (e) => {
+    //   e.preventDefault()
+    //   signIn()
+    // }
   
-    const handleSignout = (e) => {
-      e.preventDefault()
-      signOut()
-    }
+    // const handleSignout = (e) => {
+    //   e.preventDefault()
+    //   signOut()
+    // }
     
     return (
         <nav className="bg-[#202124] shadow-lg">
@@ -37,7 +37,7 @@ export default function Header() {
                         </div>
                     </div>
 
-                    {session &&
+                    {/* {session &&
             <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
               <div className="flex-shrink-0">
                 <img className="h-10 w-10 rounded-full" src={session.user.image} alt={session.user.name} />
@@ -46,8 +46,8 @@ export default function Header() {
                 <div className="text-white font-medium">{session.user.name}</div>
               </div>
             </div>
-          }
-          {session &&
+          } */}
+
                 <div className="hidden sm:block sm:ml-6">
                         <div className="flex space-x-4">
                             <Link href='/note' passHref>
@@ -55,8 +55,8 @@ export default function Header() {
                             </Link>
                         </div>
                     </div>
-}
-          {session &&
+
+          {/* {session &&
             <div className="hidden sm:block sm:ml-6">
               <div className="flex space-x-4">
                 <button className=" hover:bg-yellow-700 font-mono px-3 py-2  rounded-lg text-yellow-700 hover:text-[#202124] " onClick={handleSignout}>
@@ -64,8 +64,8 @@ export default function Header() {
                 </button>
               </div>
             </div>
-          }
-          {!session &&
+          } */}
+          {/* {!session &&
             <div className="hidden sm:block sm:ml-6">
               <div className="flex space-x-4">
                 <button className=" hover:bg-yellow-700 font-mono px-3 py-2  rounded-lg text-yellow-700 hover:text-[#202124]" onClick={handleSignin}>
@@ -73,7 +73,7 @@ export default function Header() {
                 </button>
               </div>
             </div>
-          }
+          } */}
 
 
                 </div>
