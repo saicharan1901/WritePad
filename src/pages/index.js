@@ -10,6 +10,10 @@ import HomePage from './home'
 export default function Home() {
   return (
     <>
+        <Head>
+          <title>WritePad</title>
+          
+        </Head>
         <HomePage />
     </>
   )
