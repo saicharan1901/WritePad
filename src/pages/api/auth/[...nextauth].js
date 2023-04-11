@@ -10,8 +10,8 @@ const options = {
   ],
   secret: process.env.SECRET,
   callbacks: {
-    async redirect(url, baseUrl) {
-      return baseUrl
+    signIn: async (user, account, profile) => {
+        return Promise.resolve("/");
     },
   },
 }
