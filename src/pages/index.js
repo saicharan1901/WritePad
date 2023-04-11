@@ -11,7 +11,6 @@ export default function Home() {
   return (
     <>
         <HomePage />
-      {/* <h1 className='flex items-centre justify-center h-screen'>Hello World!</h1> */}
     </>
   )
 }
