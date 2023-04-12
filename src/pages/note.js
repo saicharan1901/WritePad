@@ -49,14 +49,19 @@ const NoteAdder = () => {
         )
     }
 
+    const isLaptop = window.innerWidth >= 1024;
+
 
     return (
         <div className="bg-[#202124] text-white min-h-screen font-mono ">
             <Header />
             <h1 className='mx-auto justify-center items-center flex text-2xl text-yellow-700 mt-10'>Notes !</h1>
             <div className="container mx-auto py-2 max-w-7xl">
-                <div className="bg-[#202124] rounded-lg shadow-lg px-8 py-6 mb-8 border-gray-400 border mx-auto max-w-xs hover:border-yellow-700">
-
+            <div
+          className={`bg-[#202124] rounded-lg shadow-lg px-8 py-6 mb-8 border-gray-400 border mx-auto ${
+            isLaptop ? "max-w-2xl" : "max-w-xs"
+          } hover:border-yellow-700`}
+        >
                     <div className="">
                         <input
                             type="text"
