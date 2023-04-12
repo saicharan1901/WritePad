@@ -9,18 +9,18 @@ export default function HomePage() {
         e.preventDefault()
         signIn()
     }
-    
+
     if (status === 'loading') {
         return <p>Loading...</p>
     }
 
     if (!session) {
         return (
-            <div className="min-h-screen flex items-center justify-center bg-[#202124] font-mono">
+            <><Header /><div className="min-h-screen flex items-center justify-center bg-[#202124] font-mono">
 
-                <p className='text-xl text-white animate-bounce'>You need to sign in</p> 
+                <p className='text-xl text-white animate-bounce'>You need to sign in</p>
                 <button className="text-yellow-700 ml-5 animate-bounce bg-[#202124] font-mono px-4 py-2 rounded-md hover:bg-yellow-700 hover:text-white" onClick={handleSignin}>Sign in</button>
-            </div>
+            </div></>
         )
     }
 
@@ -40,7 +40,7 @@ export default function HomePage() {
                             </p>
                         )}
                     </div>
-                    <div className="mt-6">
+                    <div className="mt-6 justify-center items-center flex">
                         <button className="bg-yellow-500 hover:bg-yellow-400 text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline" onClick={signOut}>Sign out</button>
                     </div>
                 </div>

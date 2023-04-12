@@ -39,13 +39,14 @@ const NoteAdder = () => {
     }
 
 
+
     if (!session) {
         return (
-            <div className="min-h-screen flex items-center justify-center bg-[#202124] font-mono">
+            <><Header /><div className="min-h-screen flex items-center justify-center bg-[#202124] font-mono">
 
                 <p className='text-xl text-white animate-bounce'>You need to sign in</p>
                 <button className="text-yellow-700 ml-5 animate-bounce bg-[#202124] font-mono px-4 py-2 rounded-md hover:bg-yellow-700 hover:text-white" onClick={handleSignin}>Sign in</button>
-            </div>
+            </div></>
         )
     }
 

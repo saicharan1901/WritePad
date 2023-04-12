@@ -24,14 +24,14 @@ export default function Header() {
         <nav className="bg-[#202124] shadow-lg">
             <div className="hidden sm:block sm:ml-6">
                 <div className="flex space-x-4">
-                <Link href="/home" passHref>
-                            <div className="hidden sm:block">
+                    <Link href="/home" passHref>
+                        <div className="hidden sm:block">
 
-                                <button className="text-white hover:bg-yellow-600 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-                                    Home
-                                </button>
-                            </div>
-                        </Link>
+                            <button className="text-white hover:bg-yellow-600 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                                Home
+                            </button>
+                        </div>
+                    </Link>
                     {session &&
                         <Link href="/note" passHref>
                             <div className="hidden sm:block">
@@ -122,23 +122,27 @@ export default function Header() {
                         <p className="block px-3 py-2 text-white hover:bg-yellow-600 hover:text-white rounded-md text-sm font-medium">Notes</p>
                     </Link>
                 }
-                {session && (
-                    <Link href="#">
-                        <button
-                            className="block px-3 py-2  text-white hover:bg-yellow-600 hover:text-white rounded-md text-sm font-medium"
-                            onClick={handleSignout}
-                        >
-                            Sign out
-                        </button>
-                    </Link>
-                )
+                {session &&
+                    <div
+                        className="text-white cursor-pointer hover:bg-yellow-600 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                        onClick={handleSignout}
+                        style={{ userSelect: 'none', cursor: 'pointer' }}
+                    >
+                        Sign out
+                    </div>
+
+
                 }
 
 
                 {!session &&
-                    <button className="block text-white hover:bg-yellow-600 hover:text-white px-3 py-2 rounded-md text-sm font-medium" onClick={handleSignin}>
+                    <div
+                        className="text-white cursor-pointer hover:bg-yellow-600 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                        onClick={handleSignin}
+                        style={{ userSelect: 'none', cursor: 'pointer' }}
+                    >
                         Sign in
-                    </button>
+                    </div>
                 }
                 {session &&
                     <Link href="/profile">
