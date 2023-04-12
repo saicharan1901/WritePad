@@ -5,7 +5,7 @@ import { useSession, signIn, signOut } from 'next-auth/react'
 
 
 const NoteAdder = () => {
-    
+
     const { data: session, status } = useSession()
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
@@ -43,24 +43,26 @@ const NoteAdder = () => {
         return (
             <div className="min-h-screen flex items-center justify-center bg-[#202124] font-mono">
 
-                <p className='text-xl text-white animate-bounce'>You need to sign in</p> 
+                <p className='text-xl text-white animate-bounce'>You need to sign in</p>
                 <button className="text-yellow-700 ml-5 animate-bounce bg-[#202124] font-mono px-4 py-2 rounded-md hover:bg-yellow-700 hover:text-white" onClick={handleSignin}>Sign in</button>
             </div>
         )
     }
-    
+
 
     return (
         <div className="bg-[#202124] text-white min-h-screen font-mono ">
             <Header />
+            <h1 className='mx-auto justify-center items-center flex text-2xl text-yellow-700 mt-10'>Notes !</h1>
             <div className="container mx-auto py-2 max-w-7xl">
-                <div className="bg-[#202124] rounded-lg shadow-lg px-8 py-6 mb-8 border-gray-400 border ml-72 max-w-2xl hover:border-yellow-700">
+                <div className="bg-[#202124] rounded-lg shadow-lg px-8 py-6 mb-8 border-gray-400 border mx-auto max-w-xs hover:border-yellow-700">
+
                     <div className="">
                         <input
                             type="text"
                             id="title"
                             name="title"
-                            className="w-full px-3 py-2 placeholder-gray-400  rounded-lg focus:outline-none bg-[#202124] text-white"
+                            className="w-full px-3 py-2 placeholder-gray-400 rounded-lg focus:outline-none bg-[#202124] text-white"
                             placeholder="Title.."
                             value={title}
                             onChange={handleTitleChange}
@@ -90,9 +92,12 @@ const NoteAdder = () => {
                     </button>
                 </div>
 
-                <div className="flex flex-wrap justify-center ">
+                <div className="flex flex-wrap mx-auto ml-7 justify-center ">
                     {notes.map((note, index) => (
-                        <div key={index} className="bg-[#202124] rounded-lg shadow-lg px-8 py-6 mb-8 mr-8 max-w-md group relative break-words hover:border-yellow-700 border" >
+                        <div
+                            key={index}
+                            className="bg-[#202124] rounded-lg shadow-lg px-8 py-6 mb-8 mr-8 max-w-md group relative break-words hover:border-yellow-700 border w-full sm:w-1/2 md:w-1/3 lg:w-1/4"
+                        >
                             <h3 className="font-mono font-extrabold text-white">{note.title}</h3>
                             <p className="text-gray-300">{note.content}</p>
                             <button
